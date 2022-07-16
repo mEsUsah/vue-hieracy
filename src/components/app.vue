@@ -125,49 +125,4 @@ export default {
 
 
     }
-    .node{
-        background-color: #ff9800;
-        position: absolute;
-        width: 200px;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid white;
-        color: white;
-    }
-    .node p{
-        color: black;
-    }
-    .node__position--e{
-        right: -220px;
-    }
-    .node__position--e::before{
-        z-index: -1;
-        height: 4px;
-        background-color: white;
-        width: 20px;
-        position: absolute;
-        top: 50%;
-        left: -20px;
-        content: "";
-    }
-    .node__position--n{
-        top: -120px;
-    }
-    .node__position--s{
-        bottom: -120px;
-    }
-    .node__position--s::before{
-        z-index: -1;
-        height: 20px;
-        background-color: white;
-        width: 4px;
-        position: absolute;
-        top: -20px;
-        left: 50%;
-        content: "";
-    }
-
 </style>
