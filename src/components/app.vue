@@ -16,48 +16,64 @@ export default {
                 {
                     id: 1,
                     name: 'first',
+                    type: 'machine',
                     children: [
                         {
                             id: 2,
                             position: 'e',
                             name: 'second',
+                            type: 'pipe',
                             children: [
                                 {
-                                    id: 5,
+                                    id: 3,
                                     position: 'e',
-                                    name: 'forth',
+                                    name: 'Tee',
+                                    type: 't',
                                     children: [
                                         {
-                                            id: 6,
+                                            id: 4,
                                             position: 'e',
+                                            type: 'pipe',
                                             name: 'fifth',
                                             children: [
                                                 {
-                                                    id: 7,
+                                                    id: 5,
                                                     position: 'e',
                                                     name: 'sixth',
+                                                    type: 'equipment',
                                                     children: null
                                                 },
                                             ]
                                         },
                                         {
-                                            id: 8,
+                                            id: 6,
                                             position: 's',
+                                            type: 'pipe',
                                             name: 'seventh',
-                                            children: null
+                                            children: [
+                                                {
+                                                    id: 7,
+                                                    position: 's',
+                                                    type: 'equipment',
+                                                    name: 'eight',
+                                                    children: null
+                                                },
+                                            ]
                                         },
                                     ]
                                 },
                             ]
                         },
                         {
-                            id: 3,
+                            id: 8,
                             position: 's',
                             name: 'third',
+                            type: 'pipe',
                             children: [
                                 {
-                                    id: 4,
+                                    id: 9,
                                     position: 's',
+                                    type: 'equipment',
                                     name: 'forth',
                                     children: null
                                 },
@@ -115,11 +131,14 @@ export default {
         width: 200px;
         height: 100px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         border: 2px solid white;
         color: white;
+    }
+    .node p{
+        color: black;
     }
     .node__position--e{
         right: -220px;

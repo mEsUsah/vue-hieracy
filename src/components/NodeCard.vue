@@ -1,10 +1,12 @@
 <template>
     <div v-if="!hasChildren" class="node" :class="nodePosition()">
         <h3>{{ node.name }}</h3>
+        <p>{{ node.type }}</p>
     </div>
     
     <div v-if="hasChildren" class="node" :class="nodePosition()">
         <h3>{{ node.name }}</h3>
+        <p>{{ node.type }}</p>
         <node-card v-for="node in getChildren" 
             :key="node.id"
             :node="node">
