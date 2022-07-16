@@ -4,7 +4,7 @@
         <p>{{ node.type }} - {{ node.id }}</p>
     </div>
     
-    <div v-if="hasChildren" class="node" :class="nodePosition()">
+    <div v-if="hasChildren" class="node" :class="nodePosition()" @mouseover.self="toggleFreePos()">
         <h3>{{ node.name }}</h3>
         <p>{{ node.type }} - {{ node.id }}</p>
         <node-card v-for="node in getChildren" 
@@ -87,41 +87,6 @@
                 if(this.node.position)
                 return 'node__position--' + this.node.position;
             },
-            // getFreeSlots(){
-            //      console.log('---Free Pos for ID ' + this.node.id + '---')
-            //     let allPos = ['n','s','e','w'];
-            //     let usedPos = [];
-                
-            //     // Add parent position to list of used positions
-            //     switch(this.node.position) {
-            //         case 'n':
-            //             usedPos.push('s');
-            //             break;
-            //         case 's':
-            //             usedPos.push('n');
-            //             break;
-            //         case 'e':
-            //             usedPos.push('w');
-            //             break;
-            //         case 'w':
-            //             usedPos.push('e');
-            //             break;
-            //     }
-
-            //     //Add children to list of used positions
-            //     for(const child of this.getChildren){
-            //         usedPos.push(child.position);
-            //     }
-
-            //     // Filter out used positions from list off all possible possitions
-            //     let freePos = allPos.filter(pos => !usedPos.includes(pos));
-            //      console.log('free', freePos);
-
-            //     // Return list of free positions if a tee is not used
-            //     if(freePos.length < 2){
-            //         return freePos;
-            //     }
-            // }
         },
         inject: ['nodes']
     }
@@ -189,16 +154,16 @@
     }
 
     .freeSlot--n{
-        top: -40px;
+        top: -20px;
     }
     .freeSlot--s{
-        bottom: -40px;
+        bottom: -20px;
     }
     .freeSlot--e{
-        left: -40px;
+        left: -20px;
     }
     .freeSlot--w{
-        right: -40px;
+        right: -20px;
     }
 
 </style>
