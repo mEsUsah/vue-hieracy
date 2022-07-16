@@ -76,7 +76,7 @@
                 }
                 
                 // Return list of free positions if a tee is not used
-                if(freePos.length < 3){
+                if(freePos.length == 2){
                     return freePos;
                 }
                 return false;
